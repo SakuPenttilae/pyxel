@@ -35,7 +35,6 @@ clock = pygame.time.Clock()
 
 # Jumping related variables
 y_velocity = 0
-JUMP_HEIGHT = SCREEN_HEIGHT // 2  # Jump height to reach approximately half the screen
 GRAVITY = 1
 
 # Player movement speed and acceleration
@@ -132,7 +131,7 @@ while game_running:
             game_running = False
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP and not freeze_player:  # Change from K_SPACE to K_UP for jumping
-                y_velocity = -20  # Initial velocity for jumping
+                y_velocity = -15  # Initial velocity for jumping
             elif event.key == pygame.K_r:  # Respawn enemy when 'R' key is pressed
                 respawn_enemy()
             elif event.key == pygame.K_l:  # Change level when 'L' key is pressed
