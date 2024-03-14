@@ -52,7 +52,7 @@ font = pygame.font.Font(None, 24)
 # Flag to control the visibility of the info box
 info_visible = False
 
-# List to store the last two positions of the player
+# List to store the last positions of the player
 last_positions = []
 
 # Flag to control game state
@@ -130,12 +130,10 @@ while game_running:
         if event.type == pygame.QUIT:
             game_running = False
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP and not freeze_player:  # Change from K_SPACE to K_UP for jumping
+            if event.key == pygame.K_UP and not freeze_player:  # K_UP for jumping
                 y_velocity = -15  # Initial velocity for jumping
             elif event.key == pygame.K_r:  # Respawn enemy when 'R' key is pressed
                 respawn_enemy()
-            elif event.key == pygame.K_l:  # Change level when 'L' key is pressed
-                respawn_enemy()  # Call respawn_enemy() to change the level
             elif event.key == pygame.K_i:  # Toggle info box visibility when 'I' key is pressed
                 info_visible = not info_visible
 
